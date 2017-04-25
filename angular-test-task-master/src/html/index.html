@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRUD with Angular JS</title>
+
+  <link href="http://bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/html/css/app.css">
+</head>
+
+
+<body ng-app="musicApp">
+  <header>
+    <nav class="navbar navbar-inverse">
+      <h1>personal music library<span>&trade;</span></h1>
+    </nav>
+  </header>
+  <div class="container" ng-controller="AlbumController">
+
+      <button class="btn btn-default" ng-click="openDialog()">new album</button>
+      <button class="btn btn-default" ng-click="howMany()">how many</button>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>artist</th>
+          <th>country</th>
+          <th>company</th>
+          <th>price</th>
+          <th>year</th>
+          <th>id</th>
+          <th>cover</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="album in albums">
+
+          <td>{{album.title}}</td>
+          <td>{{album.artist}}</td>
+          <td>{{album.country}}</td>
+          <td>{{album.company}}</td>
+          <td>{{album.price | currency}}</td>
+          <td>{{album.year}}</td>
+          <td>{{album.id}}</td>
+          <td>
+            <img ng-show="album.hasOwnProperty('logoUrl')" class="img-responsive" ng-src="{{album.logoUrl}}" alt="logo" width="220px" height="auto"/>
+          </td>
+
+          <td><button type="button" class="btn btn-danger" ng-click="removeAlbum(album)">Delete</button></td>
+          <td><button type="button" class="btn btn-info" ng-click="editDialog(album)">Edit</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+  <script src="/html/ui-bootstrap-tpls-2.5.0.min.js"></script>
+  <script src="/html/app.js"></script>
+  <script src="/html/album_service.js"></script>
+</body>
+
+</html>

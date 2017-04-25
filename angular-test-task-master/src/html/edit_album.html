@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h3 class="modal-title">Edit album</h3>
+</div>
+<div class="modal-body">
+  <form role="form" novalidate name="editAlbumForm">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="formData.title">
+    </div>
+    <div class="form-group">
+      <label for="artist">Artist</label>
+      <input type="text" class="form-control" id="artist" name="Artist" placeholder="Artist" ng-model="formData.artist">
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" name="Country" placeholder="Country" ng-model="formData.country">
+    </div>
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company" name="Company" placeholder="Company" ng-model="formData.company">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" id="price" name="Price" placeholder="Price" ng-model="formData.price">
+    </div>
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input type="text" class="form-control" id="year" name="Year" placeholder="Year" ng-model="formData.year">
+    </div>
+    <div class="form-group">
+      <label for="logo">Year</label>
+      <input type="text" class="form-control" id="logo" name="Logo" placeholder="Logo url" ng-model="formData.logoUrl">
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="submit" form="editAlbumForm"  ng-click="updateAlbum(formData)">Update album</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
