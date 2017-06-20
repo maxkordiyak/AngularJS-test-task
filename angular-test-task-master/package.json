@@ -1,7 +1,7 @@
 {
-  "name": "wiser-test-project",
+  "name": "project",
   "version": "1.0.0",
-  "description": "Wiser Investment MusicLib Project",
+  "description": "MusicLib Project",
   "main": "grunt",
   "scripts": {},
   "author": "Put Your Name Here",
